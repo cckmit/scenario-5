@@ -1,0 +1,49 @@
+server:
+  port: ${PORT:8020}
+
+logging.level:
+  ch.globaz.tmmas: TRACE
+  org.springframework.web.servlet.mvc.support: TRACE
+
+elasticsearch:
+  hosts:
+    - http://localhost:9200
+  connectTimeout: 10000
+  connectionRequestTimeout: 10000
+  socketTimeout: 10000
+  maxRetryTimeoutMillis: 60000
+
+
+management:
+
+  endpoint:
+    metrics:
+      enabled: true
+
+    prometheus:
+      enabled: true
+
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+  endpoints:
+
+    web:
+      exposure:
+        include: "*"
+    beans:
+      enabled: true
+
+
+
+kafka:
+  bootstrapAddress:
+    localhost:9092
+
+personneIndexCree:
+  topic:
+    name: personne-index-cree
+
+
