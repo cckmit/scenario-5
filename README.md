@@ -1,15 +1,17 @@
-# Scénario 2
-Gestion des transactions distribuées. 
+# Scénario 5
+Implémentation de fonctionnalité d’indexation « full-text », service dédié
 
 Ce scénario se base sur deux services applicatifs: 
 * **rentes-service**: le service de gestion des rentes
 * **personnes-services**: le service de gestion des personnes
 
-## Variante n° 2
+## Variante n° 1
 ### Prérequis
 * Maven version 3.5.0
 * JDK version 1.8
 * base de données IBM DB2 (*par défaut, utilisation d'une base de données H2 embarquée*)
+* Apache Kafka : https://kafka.apache.org/
+* ElasticSearch: https://www.elastic.co/
 
 ### Exécution de l'application
 #### Service rentes
@@ -84,9 +86,4 @@ L'application embarque une documentation des API disponible à cette url:
 > {url application}/swagger-ui.html
 
 Cette documentation est basé sur l'outil `Swagger`, fournissant une documentation, mais également une interface permettant de tester les différentes API.
-
-Les API Rest suivantes ont été ajoutés pour ce scénario (API spécifique pour le scénario, pour les autres consulter 
-swagger):  
-
-> **/dossiers/withPersonne**, méthode http POST, permet la création d'un dossier et d'une personne
 
